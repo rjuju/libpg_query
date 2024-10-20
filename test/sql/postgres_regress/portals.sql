@@ -4,7 +4,7 @@
 
 BEGIN;
 
-DECLARE foo1 SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2;
+DECLARE "Foo1" SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2;
 
 DECLARE foo2 SCROLL CURSOR FOR SELECT * FROM tenk2;
 
@@ -50,7 +50,7 @@ DECLARE foo22 SCROLL CURSOR FOR SELECT * FROM tenk2;
 
 DECLARE foo23 SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2;
 
-FETCH 1 in foo1;
+FETCH 1 in "Foo1";
 
 FETCH 2 in foo2;
 
@@ -140,9 +140,9 @@ FETCH backward 21 in foo3;
 
 FETCH backward 22 in foo2;
 
-FETCH backward 23 in foo1;
+FETCH backward 23 in "Foo1";
 
-CLOSE foo1;
+CLOSE "Foo1";
 
 CLOSE foo2;
 
