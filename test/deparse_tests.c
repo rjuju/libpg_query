@@ -407,7 +407,9 @@ const char* tests[] = {
   "ALTER TABLE a DISABLE TRIGGER ALL",
   "ALTER TABLE a DISABLE TRIGGER USER",
   "CREATE INDEX myindex ON public.mytable USING btree (col1, (col2::varchar) varchar_pattern_ops)",
-  "SELECT * FROM CAST(1 AS text)"
+  "SELECT * FROM CAST(1 AS text)",
+  "DECLARE \"Foo1\" SCROLL CURSOR FOR SELECT * FROM tenk1 ORDER BY unique2",
+  "FETCH BACKWARD 23 \"Foo1\""
 };
 
 size_t testsLength = __LINE__ - 4;
